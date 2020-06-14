@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+
+TAG="$(date -u +%Y%m%dT%H%M%SZ)"
+echo "$TAG" > .tag
+docker build -t brimstone/multiarch:amd64-${TAG} .
+docker build -t brimstone/multiarch:aarch64-${TAG} --build-arg=ARCH=aarch64 .
