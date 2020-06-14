@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+uname -a
+
 docker run --rm --privileged aptman/qus -s -- -p aarch64
 
 TAG="$(date -u +%Y%m%dT%H%M%SZ)"
