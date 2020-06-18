@@ -12,3 +12,4 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         push: false
+        build_args: ARCH=aarch64
