@@ -9,6 +9,6 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: setup binfmt
-      run: docker run --rm --privileged aptman/qus -s
-    - name: build image
-      run: docker build --build-arg=ARCH=aarch64 -t brimstone/multiarch .
+      run: |
+        docker run --rm --privileged aptman/qus -s &&
+        docker build --build-arg=ARCH=aarch64 -t brimstone/multiarch .
