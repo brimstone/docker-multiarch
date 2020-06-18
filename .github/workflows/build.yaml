@@ -11,7 +11,4 @@ jobs:
     - name: setup binfmt
       run: docker run --rm --privileged aptman/qus -s
     - name: build image
-      uses: docker/build-push-action@v1
-      with:
-        push: false
-        build_args: ARCH=aarch64
+      run: docker build --build-arg=ARCH=aarch64 -t brimstone/multiarch .
