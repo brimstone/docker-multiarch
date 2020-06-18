@@ -8,6 +8,8 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
+    - name: setup binfmt
+      run: docker run --rm --privileged multiarch/qemu-user-static:register --reset
     - name: build image
       uses: docker/build-push-action@v1
       with:
