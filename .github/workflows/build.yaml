@@ -9,7 +9,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: setup binfmt
-      run: docker run --rm --privileged multiarch/qemu-user-static:register --reset
+      run: docker run --rm --privileged aptman/qus -s
     - name: build image
       uses: docker/build-push-action@v1
       with:
