@@ -1,4 +1,3 @@
-ARG ARCH
-FROM ${ARCH:-amd64}/alpine
+FROM alpine
 
 RUN apk -U add file
