@@ -29,3 +29,5 @@ jobs:
             --output "type=image,push=true" \
             --tag brimstone/multiarch \
             .
+    - name: Debug
+      run: git remote -v
